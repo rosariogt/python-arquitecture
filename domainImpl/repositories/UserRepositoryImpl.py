@@ -16,7 +16,6 @@ class UserRepositoryImpl(IUserRepository):
         pass
 
     def findAll(self):
-        print("hrere")
         users = []
         connection = Pgconnection()
         conn = connection.datasource_pg()
