@@ -1,24 +1,18 @@
 import requests
 
-from data.dto.Book import Book
+from data.dto.ResponseClient import ResponseClient
+
+HEADERS = {'accept': 'application/json'}
 
 class Client():
 
+    def getRest(self, url):
+        response = requests.get(url, headers=HEADERS)
+        result = ResponseClient(response.status_code, response.json())
+        return result
 
-    def getBook(self):
-        URL = 'https://example-data.draftbit.com/books'
+    def postRest(self, url, body):
+        return requests.post(url, data=body, headers=HEADERS)
 
-        response = requests.get(URL)
-        HEADERS = {'accept': 'application/json'}
-
-        response = requests.get(URL, headers=HEADERS)
-
-        if response.status_code == 200:
-            print("Peticion exitosa")
-
-            #print(response.content)
-            data_dict = response.json()
-            #my_model_instance = Book.parse_obj(data_dict)
-            data_list = [Book.parse_obj(item) for item in data_dict]
-
-            print(data_list)
+    def put(self, url, body):
+        return requests.put(url, data=body, headers=HEADERS)

@@ -1,9 +1,14 @@
 from typing import TypeVar, List
 
 from pydantic import BaseModel
-from pydantic.fields import FieldInfo
 
-# Clase Base, Define un tipo genérico T
+'''
+@author: rosariogt
+@date: 07/04/2024
+
+@description: clase generica que permite retornar la respuesta especificando la lista de objetos
+'''
+
 T = TypeVar('T')
 
 class RespuestaDataList(BaseModel):

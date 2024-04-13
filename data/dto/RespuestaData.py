@@ -4,6 +4,13 @@ from typing import List, Optional
 
 # Clase base, define un tipo genérico T
 
+'''
+@author: rosariogt
+@date: 07/04/2024
+
+@description: clase generica que permite retornar la respuesta especificando el objeto
+'''
+
 T = TypeVar('T')
 
 class RespuestaData(BaseModel):
