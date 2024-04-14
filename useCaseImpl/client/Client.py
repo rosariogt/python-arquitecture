@@ -12,7 +12,11 @@ class Client():
         return result
 
     def postRest(self, url, body):
-        return requests.post(url, data=body, headers=HEADERS)
+        response = requests.post(url, data=body, headers=HEADERS)
+        result = ResponseClient(response.status_code, response.json(), )
+        return result
 
-    def put(self, url, body):
-        return requests.put(url, data=body, headers=HEADERS)
+    def putRest(self, url, body):
+        response =  requests.put(url, data=body, headers=HEADERS)
+        result = ResponseClient(response.status_code, response.json(), )
+        return result

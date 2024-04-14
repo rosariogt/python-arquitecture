@@ -6,16 +6,16 @@ from domain.repository.IUserRepository import IUserRepository
 
 class UserRepositoryImpl(IUserRepository):
 
-    def insert(self, entity: User):
+    def create(self, entity: User):
         pass
 
     def update(self, entity: User):
         pass
 
-    def findById(self, id: int):
+    def getById(self, id: int):
         pass
 
-    def findAll(self):
+    def getAll(self):
         users = []
         connection = Pgconnection()
         conn = connection.datasource_pg()

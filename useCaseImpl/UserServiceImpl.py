@@ -9,7 +9,7 @@ class UserServiceImpl(IUserService):
         response = RespuestaDataList(dataList=[], success=False, messages=[])
         mensajesLista = []
         userRepository = UserRepositoryImpl()
-        users = userRepository.findAll()
+        users = userRepository.getAll()
         if users == []:
             mensajesLista.append("NO SE ENCONTRARON RESULTADOS")
             response.set_messages(mensajesLista)
